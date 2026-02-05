@@ -110,9 +110,9 @@ from .restapis import get_request
 # Create a `get_dealerships` view to render the index page with a list of dealerships
 def get_dealerships(request, state="All"):
     if state == "All":
-        endpoint = "/fetchDealers"
+        endpoint = "fetchDealers"
     else:
-        endpoint = "/fetchDealers/" + state
+        endpoint = "fetchDealers" + state
     
     dealerships = get_request(endpoint)
     return JsonResponse(dealerships, safe=False)
@@ -137,7 +137,7 @@ def get_dealer_reviews(request, dealer_id):
 # Create a `get_dealer_details` view to render the dealer details
 def get_dealer_details(request, dealer_id):
     if dealer_id:
-        endpoint = "/fetchDealer/" + str(dealer_id)
+        endpoint = "fetchDealer" + str(dealer_id)
         dealership = get_request(endpoint)
         return JsonResponse(dealership, safe=False)
     else:
