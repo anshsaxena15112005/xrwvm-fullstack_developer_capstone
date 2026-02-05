@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LoginPanel from "./components/Login/Login";
 import Register from "./components/Register/Register";
-
+import Dealers from './components/Dealers/Dealers';
 
 function App() {
   return (
@@ -12,7 +12,8 @@ function App() {
       
       {/* Route for the Registration page */}
       <Route path="/register" element={<Register />} />
-
+       
+      <Route path="/dealers" element={<Dealers/>} />
       
       {/* Default route for the homepage/index */}
       <Route path="/" element={<div>Homepage Content</div>} />
